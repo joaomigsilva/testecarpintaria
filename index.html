@@ -44,16 +44,44 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 
 
 // fazer um marker
-var marker = L.marker ([41.14961, -8.61099]).addTo(mymap)
+var marker = L.marker ([41.14961, -8.61099],
+            {title: 'Serralharia', 
+            opacity: 0.4}            
+).addTo(mymap)
+
+
+var carp1 = L.marker ([41.148062, -8.605496],
+            {title: 'CNC', 
+            opacity: 0.4}   
+).addTo(mymap)
+
+
+var carp2 = L.marker ([41.141902, -8.619316]).addTo(mymap)
+
+
+
+
+
 
 // fazer um circulo
 var circle = L.circle ([41.14961, -8.61099], {
     color: 'black',
-    fillColor: '#f03',
+    fillColor: '#158dd6',
     fillOpacity: 0.2,
     radius: 2000
 }).addTo (mymap)
 
 // fazer uma pop up
-marker.bindPopup("Este é o Porto caralho")
+carp1.bindPopup("Carpintaria 2")
+carp2.bindPopup("Carpintaria1"+ '<br><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Madeira-mos</a>')
+
+
+//uma pop up sozinha, sem estar agarrada a nada
+//var popup = L.popup()
+    //.setLatLng([41.147388, -8.608353])
+    //.setContent("I am a standalone popup.")
+    //.openOn(mymap);
+
+
+
 </script> 
