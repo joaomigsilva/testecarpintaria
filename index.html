@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rede de Carpintarias</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      html, body, #mapid {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+    </style>
+</head>
+
+<!--linkar css online-->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+<!--linkar java online-->
+ <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+ integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+ crossorigin=""></script>
+
+<body>
+
+    <div id="mapid"></div>
+
+</body>
+</html> 
+
+<script>
+var mymap = L.map('mapid').setView([41.14961, -8.61099], 14);
+
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/light-v9',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1Ijoiam9taTEzIiwiYSI6ImNranlqOXNobDEzMjQyb2xjMXUyc3p2ZDYifQ.jeg1xVyDTMu1DCwatGYz_Q'
+}).addTo(mymap);
+
+
+// fazer um marker
+var marker = L.marker ([41.14961, -8.61099]).addTo(mymap)
+
+// fazer um circulo
+var circle = L.circle ([41.14961, -8.61099], {
+    color: 'black',
+    fillColor: '#f03',
+    fillOpacity: 0.2,
+    radius: 2000
+}).addTo (mymap)
+
+// fazer uma pop up
+marker.bindPopup("Este é o Porto caralho")
+</script> 
