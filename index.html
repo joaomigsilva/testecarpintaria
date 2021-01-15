@@ -23,13 +23,29 @@
  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
  crossorigin=""></script>
 
+<!--google API-->
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+ type="text/javascript"></script>
+
 <body>
 
     <div id="mapid"></div>
-
+    <div id="googlemaps"></div>
 </body>
 </html> 
 
+
+
+
+
+
+
+
+
+
+
+
+<!--LEAFLET-->
 <script>
 var mymap = L.map('mapid').setView([41.14961, -8.61099], 14);
 
@@ -57,10 +73,6 @@ var carp1 = L.marker ([41.148062, -8.605496],
 
 
 var carp2 = L.marker ([41.141902, -8.619316]).addTo(mymap)
-
-
-
- 
 
 
 // fazer um circulo
